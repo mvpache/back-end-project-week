@@ -15,10 +15,10 @@ mongoose
     }@ds113736.mlab.com:13736/lambdanotes`
   )
   .then(() => {
-    console.log('\n=== connected to mongo ===\n');
+    console.log('=== connected to mongo ===');
   })
   .catch(err => {
-    console.log('\n=== ERROR connecting to mongo ===\n');
+    console.log('=== ERROR connecting to mongo ===');
   });
 
 server.get('/', (req, res) => {
