@@ -3,17 +3,18 @@ const mongoose = require('mongoose');
 
 const PORT = process.env.PORT || 5000;
 const config = {
-  dbuser: process.env.dbuser,
-  dpass: process.env.dbpassword,
+  dbuser: process.env.DB_USER,
+  dbpass: process.env.DB_PASS,
 };
 const server = express();
+
 mongoose
   .connect(
     `mongodb://${config.dbuser}:${
-      config.dpass
+      config.dbpass
     }@ds113736.mlab.com:13736/lambdanotes`
   )
-  .then(cnn => {
+  .then(() => {
     console.log('\n=== connected to mongo ===\n');
   })
   .catch(err => {
@@ -21,7 +22,7 @@ mongoose
   });
 
 server.get('/', (req, res) => {
-  res.send({ api: 'up and running', config: config });
+  res.send({ api: 'up and running' });
 });
 
 server.listen(PORT);
