@@ -10,7 +10,7 @@ const server = express();
 mongoose
   .connect(
     `mongodb://${config.dbuser}:${
-      config.dpass.
+      config.dpass
     }@ds113736.mlab.com:13736/lambdanotes`
   )
   .then(cnn => {
