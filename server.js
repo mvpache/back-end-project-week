@@ -7,11 +7,11 @@ const config = {
   dpass: process.env.dbpassword,
 };
 const server = express();
-
+console.log(config);
 mongoose
   .connect(
-    `mongodb://${config.dbuser}:${
-      config.dpass
+    `mongodb://${config[dbuser]}:${
+      config[dpass]
     }@ds113736.mlab.com:13736/lambdanotes`
   )
   .then(cnn => {
