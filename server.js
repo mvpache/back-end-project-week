@@ -9,11 +9,7 @@ const config = {
 const server = express();
 
 mongoose
-  .connect(
-    `mongodb://${config.dbuser}:${
-      config.dbpass
-    }@ds113736.mlab.com:13736/lambdanotes`
-  )
+  .connect(`mongodb://lambda:lambda@ds113736.mlab.com:13736/lambdanotes`)
   .then(() => {
     console.log('=== connected to mongo ===');
   })
