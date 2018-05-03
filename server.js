@@ -15,11 +15,7 @@ server.use(cors());
 const userRoutes = require('./users/UserController')(server);
 
 mongoose
-  .connect(
-    `mongodb://${config.DB_USER}:${
-      config.DB_PASS
-    }@ds113736.mlab.com:13736/lambdanotes`
-  )
+  .connect(`mongodb://lambda:lambda@ds113736.mlab.com:13736/lambdanotes`)
   .then(connected => {
     console.log('=== connected to mongo ===');
   })
