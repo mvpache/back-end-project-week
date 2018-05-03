@@ -7,7 +7,10 @@ const config = {
   dbuser: process.env.DB_USER,
   dbpass: process.env.DB_PASS,
 };
+
 const server = express();
+server.use(express.json());
+server.use(cors());
 
 const userRoutes = require('./users/UserController')(server);
 
